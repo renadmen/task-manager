@@ -3,16 +3,17 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/TaskManager', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-    console.log("Connected to MongoDB successfully :)");
-}).catch((e) => {
-    console.log("Error while attempting to connect to MongoDB");
-    console.log(e);
-});
 
-// To prevent deprectation warnings (from MongoDB native driver)
-mongoose.set('useCreateIndex', true);
-mongoose.set('useFindAndModify', false);
+
+const uri = "mongodb+srv://renadUser:747400@cluster0.dqjni.mongodb.net/renadDB?retryWrites=true&w=majority";
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log('MongoDB Connected…');
+})
+.catch(err => console.log(err))
 
 
 module.exports = {
