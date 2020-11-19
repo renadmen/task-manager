@@ -11,7 +11,7 @@ const { List, Task, User } = require('./db/models');
 
 const jwt = require('jsonwebtoken');
 // for heroku 
-const port = process.env.PORT || '8080'
+const port = process.env.PORT || 8080;
 /* MIDDLEWARE  */
 
 // Load middleware
@@ -388,6 +388,6 @@ let deleteTasksFromList = (_listId) => {
 
 
 
-app.listen(3000, () => {
-    console.log("Server is listening on port 3000");
+app.listen(port, () => {
+    console.log('Server is listening on port' + port);
 })
