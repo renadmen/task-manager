@@ -11,7 +11,7 @@ const { List, Task, User } = require('./db/models');
 
 const jwt = require('jsonwebtoken');
 // for heroku 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8080;
 /* MIDDLEWARE  */
 
 // Load middleware
