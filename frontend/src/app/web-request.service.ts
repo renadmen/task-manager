@@ -11,27 +11,27 @@ export class WebRequestService {
   }
 
   get(uri: string) {
-    return this.http.get(`${environment.baseUrl}/${uri}`);
+    return this.http.get(`${uri}`);
   }
 
   post(uri: string, payload: Object) {
-    return this.http.post(`${environment.baseUrl}/${uri}`, payload);
+    return this.http.post(`${uri}`, payload);
   }
 
   patch(uri: string, payload: Object) {
-    return this.http.patch(`${environment.baseUrl}/${uri}`, payload);
+    return this.http.patch(`${uri}`, payload);
   }
 
   delete(uri: string) {
-    return this.http.delete(`${environment.baseUrl}/${uri}`);
+    return this.http.delete(`${uri}`);
   }
 
   getTasks(uri: string, payload: Object) {
-    return this.http.get(`${environment.baseUrl}/${uri}`, payload);
+    return this.http.get(`${uri}`, payload);
   }
 
   login(email: string, password: string){
-    return this.http.post(`${environment.baseUrl}/users/login`,{
+    return this.http.post(`users/login`,{
       email,
       password
     },{
@@ -41,7 +41,7 @@ export class WebRequestService {
   }
 
   signup(email: string, password: string) {
-    return this.http.post(`${environment.baseUrl}/users`, {
+    return this.http.post(`users`, {
       email,
       password
     }, {

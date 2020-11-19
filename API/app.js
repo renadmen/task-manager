@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+
 const { mongoose } = require('./db/mongoose');
 
 const bodyParser = require('body-parser');
@@ -9,8 +10,8 @@ const bodyParser = require('body-parser');
 const { List, Task, User } = require('./db/models');
 
 const jwt = require('jsonwebtoken');
-
-
+// for heroku 
+const port = process.env.PORT || 8080
 /* MIDDLEWARE  */
 
 // Load middleware

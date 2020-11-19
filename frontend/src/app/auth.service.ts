@@ -74,7 +74,7 @@ export class AuthService {
   }
 
   getNewAccessToken() {
-    return this.http.get(`${environment.baseUrl}/users/me/access-token`, {
+    return this.http.get(`users/me/access-token`, {
       headers: {
         'x-refresh-token': this.getRefreshToken(),
         '_id': this.getUserId()
