@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
 
 
@@ -12,6 +14,10 @@ const { List, Task, User } = require('./db/models');
 const jwt = require('jsonwebtoken');
 // for heroku 
 const port = process.env.PORT || 8080;
+
+// Set Static Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 /* MIDDLEWARE  */
 
 // Load middleware
@@ -385,7 +391,14 @@ let deleteTasksFromList = (_listId) => {
     })
 }
 
-
+// Index Route
+app.get('/', (req, res) => {
+    res.send('invaild endpoint');
+  });
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+  });
 
 
 app.listen(port, () => {
