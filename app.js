@@ -15,9 +15,7 @@ const jwt = require('jsonwebtoken');
 // for heroku 
 const port = process.env.PORT || 8080;
 
-// Create link to Angular build directory
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+
 /* MIDDLEWARE  */
 
 // Load middleware
@@ -391,8 +389,15 @@ let deleteTasksFromList = (_listId) => {
     })
 }
 
+// Index Route
+app.get('/', (req, res) => {
+    res.send('invaild endpoint');
+  });
+  
 
-
+// Create link to Angular build directory
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 app.listen(port, () => {
     console.log('Server is listening on port' + port);
