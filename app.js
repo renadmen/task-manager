@@ -401,8 +401,8 @@ app.get('/', (req, res) => {
 //   });
 
 // Create link to Angular build directory
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+// var distDir = __dirname + "/dist/";
+// app.use(express.static(distDir));
 
 app.listen(port, () => {
     console.log('Server is listening on port' + port);
