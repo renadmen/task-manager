@@ -15,6 +15,8 @@ const jwt = require('jsonwebtoken');
 // for heroku 
 const port = process.env.PORT || 8080;
 
+// Set Static Folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 /* MIDDLEWARE  */
 
@@ -394,6 +396,9 @@ app.get('/', (req, res) => {
     res.send('invaild endpoint');
   });
   
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/index.html'));
+//   });
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
