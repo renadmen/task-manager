@@ -14,6 +14,8 @@ mongoose.connect(uri, {
   console.log('MongoDB Connected…');
 })
 .catch(err => console.log(err))
+mongoose.set('useCreateIndex', true);
+
 
 
 module.exports = {
