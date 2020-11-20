@@ -31,7 +31,7 @@ export class WebRequestService {
   }
 
   login(email: string, password: string){
-    return this.http.post(`users/login`,{
+    return this.http.post('users/login',{
       email,
       password
     },{
@@ -41,7 +41,7 @@ export class WebRequestService {
   }
 
   signup(email: string, password: string) {
-    return this.http.post(`users`, {
+    return this.http.post('users', {
       email,
       password
     }, {
